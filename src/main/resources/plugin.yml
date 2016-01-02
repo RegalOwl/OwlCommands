@@ -1,0 +1,55 @@
+name: BasicCommands
+main: regalowl.basiccommands.BasicCommands
+version: 0.01
+author: RegalOwl
+commands:
+   teleport:
+      description: Handles teleportation.
+      aliases: [tp]
+   back:
+      description: Returns you to your location prior to your latest teleport.
+      aliases: [b]
+   heal:
+      description: Heals.
+   gamemode:
+      description: Changes gamemode.
+      aliases: [gm]
+   god:
+      description: Gives invincibility.
+   pvp:
+      description: Toggles pvp.
+   ip:
+      description: Displays IP address.
+   message:
+      description: Sends messages.
+      aliases: [msg, m]
+   reply:
+      description: Replies to messages.
+      aliases: [r]
+   nick:
+      description: Gives nicknames.
+   mute:
+      description: Silences a player.
+   ram:
+      description: Displays RAM information.
+   time:
+      description: Sets time.
+   weather:
+      description: Sets weather.
+   ignore:
+      description: Ignores a player.
+   playerinfo:
+      description: Displays player information.
+      aliases: [pi]
+   flyspeed:
+      description: Sets player flyspeed.
+      aliases: [fs]
+   through:
+      description: Teleports through a barrier.
+      aliases: [thru]
+   top:
+      description: Teleports you upward to the first available space.
+permissions:
+    bcommands.admin:
+        description: Gives access to all BasicCommands commands.
+        default: op
