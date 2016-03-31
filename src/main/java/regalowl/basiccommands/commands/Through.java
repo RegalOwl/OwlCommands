@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 
 
 
-public class Top implements CommandExecutor {
+public class Through implements CommandExecutor {
 	
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -25,16 +25,26 @@ public class Top implements CommandExecutor {
 		}
 		if (p == null) {return true;}
 		Location pl = p.getLocation();
-		Block cb = pl.getBlock().getRelative(BlockFace.UP);
+		BlockFace direction = getDirection(pl.getYaw());
+		Block cb = pl.getBlock().getRelative(direction);
+		int c = 0;
 		while (!cb.getType().isSolid()) {
-			cb = cb.getRelative(BlockFace.UP);
-		}
-		Block tb = cb.getRelative(BlockFace.UP);
-		while (tb.getType().isSolid() || tb.getRelative(BlockFace.UP).getType().isSolid()) {
-			if (tb.getLocation().getBlockY() == 255) {
-				break;
+			if (c > 64) {
+				p.sendMessage(ChatColor.RED + "Could not find a suitable teleport location.");
+				return true;
 			}
-			tb = tb.getRelative(BlockFace.UP);
+			cb = cb.getRelative(direction);
+			c++;
+		}
+		Block tb = cb.getRelative(direction);
+		c = 0;
+		while (tb.getType().isSolid() || tb.getRelative(BlockFace.UP).getType().isSolid()) {
+			if (c > 64) {
+				p.sendMessage(ChatColor.RED + "Could not find a suitable teleport location.");
+				return true;
+			}
+			tb = tb.getRelative(direction);
+			c++;
 		}
 		Location nl = tb.getLocation();
 		nl.setX(nl.getBlockX() + .5);
@@ -45,6 +55,15 @@ public class Top implements CommandExecutor {
 		return true;
 	}
 	
+	
+	private BlockFace getDirection(Float yaw) {
+	    int yawInt = Math.round(yaw / 90);
+	    if (yawInt == -4 || yawInt == 0 || yaw == 4) {return BlockFace.SOUTH;}
+	    if (yawInt == -1 || yawInt == 3) {return BlockFace.EAST;}
+	    if (yawInt == -2 || yawInt == 2) {return BlockFace.NORTH;}
+	    if (yawInt == -3 || yawInt == 1) {return BlockFace.WEST;}
+	    return null;
+	}
 		
 		
 

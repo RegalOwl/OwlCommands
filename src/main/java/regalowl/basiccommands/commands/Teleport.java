@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 import java.util.HashMap;
 import org.bukkit.Bukkit;

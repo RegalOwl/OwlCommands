@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

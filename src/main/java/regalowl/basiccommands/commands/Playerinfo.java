@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

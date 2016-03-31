@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+
+import regalowl.basiccommands.BasicCommands;
+import regalowl.basiccommands.StringFunctions;
 
 
 

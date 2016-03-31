@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.basiccommands.commands;
 
 
 import java.util.HashMap;
@@ -18,6 +18,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scheduler.BukkitTask;
+
+import regalowl.basiccommands.BasicCommands;
 
 
 public class Pvp implements CommandExecutor, Listener {

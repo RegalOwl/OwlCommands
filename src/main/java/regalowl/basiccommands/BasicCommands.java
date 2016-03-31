@@ -5,6 +5,26 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import regalowl.basiccommands.commands.Back;
+import regalowl.basiccommands.commands.Flyspeed;
+import regalowl.basiccommands.commands.Gamemode;
+import regalowl.basiccommands.commands.God;
+import regalowl.basiccommands.commands.Heal;
+import regalowl.basiccommands.commands.Ignore;
+import regalowl.basiccommands.commands.Ip;
+import regalowl.basiccommands.commands.Message;
+import regalowl.basiccommands.commands.Mute;
+import regalowl.basiccommands.commands.Nick;
+import regalowl.basiccommands.commands.Playerinfo;
+import regalowl.basiccommands.commands.Pvp;
+import regalowl.basiccommands.commands.Ram;
+import regalowl.basiccommands.commands.Reply;
+import regalowl.basiccommands.commands.Teleport;
+import regalowl.basiccommands.commands.Through;
+import regalowl.basiccommands.commands.Time;
+import regalowl.basiccommands.commands.Top;
+import regalowl.basiccommands.commands.Weather;
+
 
 
 
