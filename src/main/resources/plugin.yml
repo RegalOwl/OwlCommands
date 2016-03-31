@@ -51,5 +51,5 @@ commands:
       description: Teleports you upward to the first available space.
 permissions:
     owlcommands.admin:
-        description: Gives access to all BasicCommands commands.
+        description: Gives access to all OwlCommands commands.
         default: op

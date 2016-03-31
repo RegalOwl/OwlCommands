@@ -25,8 +25,8 @@ public class YamlFile {
     YamlFile() {
     	bc = OwlCommands.bc;
     	log = Logger.getLogger("Minecraft");
-        configFile = new File(Bukkit.getServer().getPluginManager().getPlugin("BasicCommands").getDataFolder(), "config.yml");  
-        playersFile = new File(Bukkit.getServer().getPluginManager().getPlugin("BasicCommands").getDataFolder(), "players.yml");  
+        configFile = new File(Bukkit.getServer().getPluginManager().getPlugin("OwlCommands").getDataFolder(), "config.yml");  
+        playersFile = new File(Bukkit.getServer().getPluginManager().getPlugin("OwlCommands").getDataFolder(), "players.yml");  
         checkYml();
         config = new YamlConfiguration();
         players = new YamlConfiguration();
@@ -72,13 +72,13 @@ public class YamlFile {
         try {
             config.load(configFile);
         } catch (Exception e) {
-	    	log.info("[BasicCommands]Bad config.yml file, disabling plugin.");
+	    	log.info("[OwlCommands]Bad config.yml file, disabling plugin.");
 	    	bc.getServer().getPluginManager().disablePlugin(bc);
         }
         try {
             players.load(playersFile);
         } catch (Exception e) {
-	    	log.info("[BasicCommands]Bad players.yml file, disabling plugin.");
+	    	log.info("[OwlCommands]Bad players.yml file, disabling plugin.");
 	    	bc.getServer().getPluginManager().disablePlugin(bc);
         }
     }
