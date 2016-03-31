@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.owlcommands;
 
 
 
@@ -20,10 +20,10 @@ public class YamlFile {
 	private FileConfiguration players;
 	private File playersFile;
     private Logger log;
-    private BasicCommands bc;
+    private OwlCommands bc;
     
     YamlFile() {
-    	bc = BasicCommands.bc;
+    	bc = OwlCommands.bc;
     	log = Logger.getLogger("Minecraft");
         configFile = new File(Bukkit.getServer().getPluginManager().getPlugin("BasicCommands").getDataFolder(), "config.yml");  
         playersFile = new File(Bukkit.getServer().getPluginManager().getPlugin("BasicCommands").getDataFolder(), "players.yml");  

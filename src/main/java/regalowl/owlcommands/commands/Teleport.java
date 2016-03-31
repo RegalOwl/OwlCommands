@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import java.util.HashMap;
 import org.bukkit.Bukkit;
@@ -20,7 +20,7 @@ public class Teleport implements CommandExecutor {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.teleport") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.teleport") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import regalowl.basiccommands.BasicCommands;
+import regalowl.owlcommands.OwlCommands;
 
 
 
@@ -20,14 +20,14 @@ public class God implements CommandExecutor, Listener {
 	private ArrayList<String> godMode = new ArrayList<String>();
 	
 	public God() {
-		BasicCommands.bc.getServer().getPluginManager().registerEvents(this, BasicCommands.bc);
+		OwlCommands.bc.getServer().getPluginManager().registerEvents(this, OwlCommands.bc);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.god") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.god") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

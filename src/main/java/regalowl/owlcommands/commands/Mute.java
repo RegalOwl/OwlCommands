@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import java.util.ArrayList;
 
@@ -14,8 +14,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import regalowl.basiccommands.BasicCommands;
-import regalowl.basiccommands.StringFunctions;
+import regalowl.owlcommands.OwlCommands;
+import regalowl.owlcommands.StringFunctions;
 
 
 
@@ -25,14 +25,14 @@ public class Mute implements CommandExecutor, Listener {
 	
 	public Mute() {
 		sf = new StringFunctions();
-		BasicCommands.bc.getServer().getPluginManager().registerEvents(this, BasicCommands.bc);
+		OwlCommands.bc.getServer().getPluginManager().registerEvents(this, OwlCommands.bc);
 	}
 	
 	public ArrayList<String> getMuted() {
-		return sf.explode(BasicCommands.y.config().getString("muted"), ",");
+		return sf.explode(OwlCommands.y.config().getString("muted"), ",");
 	}
 	public void setMuted(ArrayList<String> muted) {
-		BasicCommands.y.config().set("muted", sf.implode(muted, ","));
+		OwlCommands.y.config().set("muted", sf.implode(muted, ","));
 	}
 	
 	
@@ -40,7 +40,7 @@ public class Mute implements CommandExecutor, Listener {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.mute") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.mute") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

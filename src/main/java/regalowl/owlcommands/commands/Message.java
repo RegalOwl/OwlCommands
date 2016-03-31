@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import java.util.HashMap;
 
@@ -19,7 +19,7 @@ public class Message implements CommandExecutor {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.message") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.message") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

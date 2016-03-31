@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -18,7 +18,7 @@ public class Through implements CommandExecutor {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.through") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.through") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

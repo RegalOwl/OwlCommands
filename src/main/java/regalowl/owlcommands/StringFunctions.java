@@ -1,4 +1,4 @@
-package regalowl.basiccommands;
+package regalowl.owlcommands;
 
 import java.util.ArrayList;
 

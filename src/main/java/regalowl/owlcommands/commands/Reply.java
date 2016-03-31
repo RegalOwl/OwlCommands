@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import regalowl.basiccommands.BasicCommands;
+import regalowl.owlcommands.OwlCommands;
 
 
 
@@ -18,14 +18,14 @@ public class Reply implements CommandExecutor {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.reply") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.reply") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}
 		}
 		if (p == null) {return true;}
 		if (args.length >= 1) {
-			Player lm = Bukkit.getPlayer(BasicCommands.bc.getMessage().getLastMessaged(p.getName()));
+			Player lm = Bukkit.getPlayer(OwlCommands.bc.getMessage().getLastMessaged(p.getName()));
 			if (lm == null) {
 				sender.sendMessage(ChatColor.RED + "There is no one to reply to.");
 				return true;

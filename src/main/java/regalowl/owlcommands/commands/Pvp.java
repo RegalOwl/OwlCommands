@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scheduler.BukkitTask;
 
-import regalowl.basiccommands.BasicCommands;
+import regalowl.owlcommands.OwlCommands;
 
 
 public class Pvp implements CommandExecutor, Listener {
@@ -33,18 +33,18 @@ public class Pvp implements CommandExecutor, Listener {
 				setPvp(p.getName(), false);
 			}
 		}
-		BasicCommands.bc.getServer().getPluginManager().registerEvents(this, BasicCommands.bc);
+		OwlCommands.bc.getServer().getPluginManager().registerEvents(this, OwlCommands.bc);
 	}
 	
 	
 	public void setPvp(String player, boolean status) {
-		BasicCommands.y.players().set(player + ".pvp", status);
+		OwlCommands.y.players().set(player + ".pvp", status);
 	}
 	public boolean getPvp(String player) {
-		return BasicCommands.y.players().getBoolean(player + ".pvp");
+		return OwlCommands.y.players().getBoolean(player + ".pvp");
 	}
 	public boolean pvpSet(String player) {
-		return BasicCommands.y.players().isSet(player + ".pvp");
+		return OwlCommands.y.players().isSet(player + ".pvp");
 	}
 	
 
@@ -52,7 +52,7 @@ public class Pvp implements CommandExecutor, Listener {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.pvp") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.pvp") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}
@@ -64,17 +64,17 @@ public class Pvp implements CommandExecutor, Listener {
 		}
 		if (!pvpSet(p.getName())) {
 			setPvp(p.getName(), true);
-			BasicCommands.y.players().set(p.getName() + ".pvp", true);
+			OwlCommands.y.players().set(p.getName() + ".pvp", true);
 			p.sendMessage(ChatColor.AQUA + "Pvp is now enabled.");
 		} else {
 			boolean state = getPvp(p.getName());
 			if (state) {
 				setPvp(p.getName(), false);
-				BasicCommands.y.players().set(p.getName() + ".pvp", false);
+				OwlCommands.y.players().set(p.getName() + ".pvp", false);
 				p.sendMessage(ChatColor.AQUA + "Pvp is now disabled.");
 			} else {
 				setPvp(p.getName(), true);
-				BasicCommands.y.players().set(p.getName() + ".pvp", true);
+				OwlCommands.y.players().set(p.getName() + ".pvp", true);
 				p.sendMessage(ChatColor.AQUA + "Pvp is now enabled.");
 			}
 		}
@@ -131,7 +131,7 @@ public class Pvp implements CommandExecutor, Listener {
     		seconds = 0;
     		waitSeconds = 120;
     		p = player;
-    		t = BasicCommands.bc.getServer().getScheduler().runTaskTimer(BasicCommands.bc, new Runnable() {
+    		t = OwlCommands.bc.getServer().getScheduler().runTaskTimer(OwlCommands.bc, new Runnable() {
     			public void run() {
     				seconds++;
     				if (seconds >= waitSeconds) {

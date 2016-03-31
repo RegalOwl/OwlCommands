@@ -1,4 +1,4 @@
-package regalowl.basiccommands.commands;
+package regalowl.owlcommands.commands;
 
 import java.util.ArrayList;
 
@@ -14,8 +14,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import regalowl.basiccommands.BasicCommands;
-import regalowl.basiccommands.StringFunctions;
+import regalowl.owlcommands.OwlCommands;
+import regalowl.owlcommands.StringFunctions;
 
 
 
@@ -25,17 +25,17 @@ public class Ignore implements CommandExecutor, Listener {
 	
 	public Ignore() {
 		sf = new StringFunctions();
-		BasicCommands.bc.getServer().getPluginManager().registerEvents(this, BasicCommands.bc);
+		OwlCommands.bc.getServer().getPluginManager().registerEvents(this, OwlCommands.bc);
 	}
 	
 	public void setIgnored(String player, ArrayList<String> ignored) {
-		BasicCommands.y.players().set(player + ".ignore", sf.implode(ignored, ","));
+		OwlCommands.y.players().set(player + ".ignore", sf.implode(ignored, ","));
 	}
 	public ArrayList<String> getIgnored(String player) {
-		return sf.explode(BasicCommands.y.players().getString(player + ".ignore"), ",");
+		return sf.explode(OwlCommands.y.players().getString(player + ".ignore"), ",");
 	}	
 	public boolean hasIgnored(String player) {
-		return BasicCommands.y.players().isSet(player + ".ignore");
+		return OwlCommands.y.players().isSet(player + ".ignore");
 	}
 
 
@@ -44,7 +44,7 @@ public class Ignore implements CommandExecutor, Listener {
 		Player p = null;
 		if (sender instanceof Player) {
 			p = (Player)sender;
-			if (!p.hasPermission("bcommands.ignore") && !p.hasPermission("bcommands.admin")) {
+			if (!p.hasPermission("owlcommands.ignore") && !p.hasPermission("owlcommands.admin")) {
 				p.sendMessage(ChatColor.RED + "You don't have permission.");
 				return true;
 			}

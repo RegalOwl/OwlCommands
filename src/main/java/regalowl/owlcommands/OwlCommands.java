@@ -1,35 +1,35 @@
-package regalowl.basiccommands;
+package regalowl.owlcommands;
 
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import regalowl.basiccommands.commands.Back;
-import regalowl.basiccommands.commands.Flyspeed;
-import regalowl.basiccommands.commands.Gamemode;
-import regalowl.basiccommands.commands.God;
-import regalowl.basiccommands.commands.Heal;
-import regalowl.basiccommands.commands.Ignore;
-import regalowl.basiccommands.commands.Ip;
-import regalowl.basiccommands.commands.Message;
-import regalowl.basiccommands.commands.Mute;
-import regalowl.basiccommands.commands.Nick;
-import regalowl.basiccommands.commands.Playerinfo;
-import regalowl.basiccommands.commands.Pvp;
-import regalowl.basiccommands.commands.Ram;
-import regalowl.basiccommands.commands.Reply;
-import regalowl.basiccommands.commands.Teleport;
-import regalowl.basiccommands.commands.Through;
-import regalowl.basiccommands.commands.Time;
-import regalowl.basiccommands.commands.Top;
-import regalowl.basiccommands.commands.Weather;
+import regalowl.owlcommands.commands.Back;
+import regalowl.owlcommands.commands.Flyspeed;
+import regalowl.owlcommands.commands.Gamemode;
+import regalowl.owlcommands.commands.God;
+import regalowl.owlcommands.commands.Heal;
+import regalowl.owlcommands.commands.Ignore;
+import regalowl.owlcommands.commands.Ip;
+import regalowl.owlcommands.commands.Message;
+import regalowl.owlcommands.commands.Mute;
+import regalowl.owlcommands.commands.Nick;
+import regalowl.owlcommands.commands.Playerinfo;
+import regalowl.owlcommands.commands.Pvp;
+import regalowl.owlcommands.commands.Ram;
+import regalowl.owlcommands.commands.Reply;
+import regalowl.owlcommands.commands.Teleport;
+import regalowl.owlcommands.commands.Through;
+import regalowl.owlcommands.commands.Time;
+import regalowl.owlcommands.commands.Top;
+import regalowl.owlcommands.commands.Weather;
 
 
 
 
-public class BasicCommands extends JavaPlugin implements Listener {
-	public static BasicCommands bc;
+public class OwlCommands extends JavaPlugin implements Listener {
+	public static OwlCommands bc;
 	public static YamlFile y;
 	
 	private Message message;

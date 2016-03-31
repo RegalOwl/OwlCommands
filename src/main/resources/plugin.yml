@@ -1,5 +1,5 @@
-name: BasicCommands
-main: regalowl.basiccommands.BasicCommands
+name: OwlCommands
+main: regalowl.owlcommands.OwlCommands
 version: 0.01
 author: RegalOwl
 commands:
@@ -50,6 +50,6 @@ commands:
    top:
       description: Teleports you upward to the first available space.
 permissions:
-    bcommands.admin:
+    owlcommands.admin:
         description: Gives access to all BasicCommands commands.
         default: op
